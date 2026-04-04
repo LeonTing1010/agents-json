@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "name": "Hacker News",
+  "description": "Tech news aggregator with community voting and discussion",
+  "homepage": "https://news.ycombinator.com",
+
+  "data": [
+    {
+      "name": "top-stories",
+      "description": "Front page stories ranked by score",
+      "endpoint": "https://hacker-news.firebaseio.com/v0/topstories.json",
+      "method": "GET",
+      "format": "json",
+      "fields": {
+        "id": "number — story ID",
+        "title": "string — story title",
+        "url": "string — link URL",
+        "score": "number — upvote count",
+        "by": "string — author username",
+        "time": "number — unix timestamp",
+        "descendants": "number — comment count"
+      },
+      "auth": "none",
+      "rate_limit": "30 req/min"
+    },
+    {
+      "name": "new-stories",
+      "description": "Newest stories in chronological order",
+      "endpoint": "https://hacker-news.firebaseio.com/v0/newstories.json",
+      "method": "GET",
+      "format": "json",
+      "auth": "none"
+    },
+    {
+      "name": "best-stories",
+      "description": "Highest voted stories of all time",
+      "endpoint": "https://hacker-news.firebaseio.com/v0/beststories.json",
+      "method": "GET",
+      "format": "json",
+      "auth": "none"
+    }
+  ],
+
+  "specs": {
+    "rss": "https://news.ycombinator.com/rss"
+  },
+
+  "policies": {
+    "automation_allowed": true,
+    "rate_limit": "30 req/min",
+    "requires_attribution": false
+  }
+}

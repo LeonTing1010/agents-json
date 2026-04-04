@@ -1,0 +1,44 @@
+{
+  "version": "1.0",
+  "name": "GitHub",
+  "description": "Code hosting platform for version control and collaboration",
+  "homepage": "https://github.com",
+
+  "data": [
+    {
+      "name": "trending",
+      "description": "Trending repositories today",
+      "endpoint": "https://api.github.com/search/repositories?q=created:>2026-01-01&sort=stars&order=desc",
+      "method": "GET",
+      "format": "json",
+      "fields": {
+        "full_name": "string — owner/repo",
+        "description": "string — repo description",
+        "stargazers_count": "number — star count",
+        "language": "string — primary language",
+        "html_url": "string — repo URL"
+      },
+      "auth": "none",
+      "rate_limit": "60 req/hour (unauthenticated)"
+    },
+    {
+      "name": "user-repos",
+      "description": "Repositories for a specific user",
+      "endpoint": "https://api.github.com/users/{username}/repos",
+      "method": "GET",
+      "format": "json",
+      "auth": "none"
+    }
+  ],
+
+  "specs": {
+    "openapi": "https://github.com/github/rest-api-description/blob/main/descriptions/api.github.com/api.github.com.json"
+  },
+
+  "policies": {
+    "automation_allowed": true,
+    "rate_limit": "5000 req/hour (authenticated)",
+    "requires_attribution": false,
+    "contact": "support@github.com"
+  }
+}
