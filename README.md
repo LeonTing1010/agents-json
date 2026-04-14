@@ -176,6 +176,12 @@ Same as `data[]` plus:
 
 Future: IANA well-known URI registration (RFC 8615) once sufficient adoption.
 
+## Support
+
+If you find agents.json useful, consider buying me a coffee:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/leonting1010)
+
 ## License
 
 [CC0 1.0 Universal](LICENSE) — No rights reserved. Use freely.
